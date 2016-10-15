@@ -24,12 +24,11 @@ $(function () {
   answer3: 'Индейцы'
 }
 ];
-
+console.log(questionsAnswers[1]);
 localStorage.setItem('answerQuestion', JSON.stringify(questionsAnswers) );
 
 var testBlock = localStorage.getItem('answerQuestion');
 testBlock = JSON.parse(testBlock);
-console.log(testBlock);
 
   var content = tmpl(html, {
     data: testBlock
