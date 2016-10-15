@@ -1,44 +1,35 @@
-var generationDom = {
+'use strict;'
+$(function () {
+  var html = $('#test-question').html();
 
-questions : [ "1.Вопрос №1", "2.Вопрос №2", "3.Вопрос №3" ],
-answers : [ "Вариант ответа №1", "Вариант ответа №2", "Вариант ответа №3" ],
-
-  addHeader : function (name) {
-    var headText;
-
-    headText = document.createElement( 'h3' );
-    headText.innerHTML = name;
-    document.body.appendChild( headText );
+  var questionsAnswers = [
+  {
+    question: '1. Кто открыл Америку?',
+    answer1: 'Христофор Колумб',
+    answer2: 'Джеймс Кук',
+    answer3: 'Виллем Янц'
   },
 
-  addNumberBlock : function () {
-    var form, h2, label, input, span, inputButton ;
+  {
+  question: '2. В каком году было открытие Америки?',
+  answer1: '1945',
+  answer2: '1492',
+  answer3: '1476'
+},
 
-    form = document.createElement( 'form' );
-    document.body.appendChild(form);
-
-    for (var i = 0; i < this.questions.length; i++) {
-      h2 = document.createElement( 'h2' );
-      h2.innerHTML = this.questions[i];
-      form.appendChild( h2 );
-
-      for (var j = 0; j < this.answers.length; j++) {
-        label = document.createElement( 'label' );
-        form.appendChild( label );
-        input =  document.createElement( 'input' );
-        input.type = 'checkbox';
-        label.appendChild( input );
-        span =  document.createElement( 'span' );
-        span.innerHTML = this.answers[j];
-        label.appendChild( span );
-      }
-    }
-    inputButton =  document.createElement( 'input' );
-    inputButton.type = 'submit';
-    inputButton.value = 'Проверить мои результаты';
-    form.appendChild( inputButton );
-  }
+{
+  question: '3. По предположениям, кто открыл Америку за 70 лет до ее открытия?',
+  answer1: 'Китайцы',
+  answer2: 'Немцы',
+  answer3: 'Индейцы'
 }
+];
+console.log(questionsAnswers);
 
-generationDom.addHeader('Тест по программированию');
-generationDom.addNumberBlock();
+  var content = tmpl(html, {
+    data: questionsAnswers
+  });
+
+  $('body').append(content);
+
+});

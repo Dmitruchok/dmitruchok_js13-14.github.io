@@ -2,12 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My homework_js3-4</title>
+    <title>My homework_js13-14</title>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+    <!--template-->
+    <script src="js/tmpl.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
 
-<script src="js/script.js"></script>
+  <script type="text/template" id="test-question">
+    <div class="content">
+      <h3>Тест</h3>
+      <form>
+        <% for(var i = 0; i < data.length; i++) {%>
+        <h1><%= data[i].question %></h1>
+        <label>
+          <input type="checkbox">
+          <span><%= data[i].answer1 %></span>
+        </label>
+        <label>
+          <input type="checkbox">
+          <span><%= data[i].answer2 %></span>
+        </label>
+        <label>
+          <input type="checkbox">
+          <span><%= data[i].answer3 %></span>
+        </label>
+        <% }; %>
+      </form>
+    </div>
+  </script>
+
 </body>
 </html>
