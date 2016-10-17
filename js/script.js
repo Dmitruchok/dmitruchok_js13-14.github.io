@@ -43,7 +43,8 @@ $testBlock = JSON.parse($testBlock);
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
  $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
-  console.log($oneTrueBlockQuestion);
+
+  console.log($oneTrueBlockQuestion[2]);
 
 
   $('#button-check').on('click', function () {
