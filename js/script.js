@@ -1,6 +1,6 @@
 'use strict;'
 $(function () {
-  var html = $('#test-question').html();
+  var $html = $('#test-question').html();
 
   var questionsAnswers = [
   {
@@ -24,16 +24,33 @@ $(function () {
   answer3: 'Индейцы'
 }
 ];
-console.log(questionsAnswers[1]);
+
 localStorage.setItem('answerQuestion', JSON.stringify(questionsAnswers) );
 
-var testBlock = localStorage.getItem('answerQuestion');
-testBlock = JSON.parse(testBlock);
+var $testBlock = localStorage.getItem('answerQuestion');
+$testBlock = JSON.parse($testBlock);
 
-  var content = tmpl(html, {
-    data: testBlock
+  var content = tmpl($html, {
+    data: $testBlock
   });
 
   $('body').append(content);
+
+  var $variant = $('#one-variant');
+  var $result = false;
+
+  var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
+ $twoTrueBlockQuestion = $('.content-block-2').find('input'),
+ $threeTrueBlockQuestion = $('.content-block-3').find('input');
+
+  console.log($oneTrueBlockQuestion);
+
+
+  $('#button-check').on('click', function () {
+    event.preventDefault();
+      if ($oneTrueBlockQuestion.prop('checked')) {
+        alert('Тест Пройден');
+      }
+    });
 
 });
