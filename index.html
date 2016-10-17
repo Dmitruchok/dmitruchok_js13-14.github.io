@@ -14,10 +14,11 @@
 <body>
 
   <script type="text/template" id="test-question">
-    <div class="content">
+
       <h3>Тест</h3>
       <form>
         <% for(var i = 0; i < data.length; i++) {%>
+      <div class="content-block-<%= i+1 %>">
         <h2><%= data[i].question %></h2>
         <label>
           <input type="checkbox">
@@ -31,10 +32,11 @@
           <input type="checkbox">
           <span><%= data[i].answer3 %></span>
         </label>
+       </div>
         <% }; %>
         <input type="submit" value="Проверить результат">
       </form>
-    </div>
+
   </script>
 
 </body>
