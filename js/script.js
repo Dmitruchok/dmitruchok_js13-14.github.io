@@ -38,17 +38,10 @@ $testBlock = JSON.parse($testBlock);
 
   var $variant = $('#one-variant');
   var $right = ['Христофор Колумб', '1492', 'Китайцы'];
-  var $returnRight = [];
+  console.log($right.length);
+
   var $mass = [];
-  console.log($mass);
-  for (var i = 0; i < $right.length; i++) {
-    for (var j = 0; j < $returnRight.length; j++) {
-      console.log(i);
-      if ($right[i] == returnRight[j]) {
-          $mass.push($right[i]);
-      }
-    }
-  }
+
 
   var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
@@ -63,5 +56,17 @@ $testBlock = JSON.parse($testBlock);
       }
     }
   });
+  var $returnRight = [];
+  console.log($returnRight.length);
+  for (var i = 0; i < $right.length; i++) {
+    console.log($right[i]);
+    for (var j = 0; j < $returnRight.length; j++) {
+      console.log($returnRight[j]);
+      if ($right[i] == $returnRight[j]) {
+          $mass.push($right[i]);
+      }
+    }
+  }
+
 
 });
