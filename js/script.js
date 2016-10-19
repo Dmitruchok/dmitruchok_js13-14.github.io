@@ -37,19 +37,29 @@ $testBlock = JSON.parse($testBlock);
   $('body').append(content);
 
   var $variant = $('#one-variant');
-  //var $result = false;
+  var $right = ['Христофор Колумб', '1492', 'Китайцы'];
+  var $returnRight = [];
+  var $mass = [];
+  console.log($mass);
+  for (var i = 0; i < $right.length; i++) {
+    for (var j = 0; j < $returnRight.length; j++) {
+      console.log(i);
+      if ($right[i] == returnRight[j]) {
+          $mass.push($right[i]);
+      }
+    }
+  }
 
   var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
  $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
-  console.log($oneTrueBlockQuestion);
 
   $('#button-check').on('click', function () {
     event.preventDefault();
     for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
       if ($($oneTrueBlockQuestion[i]).prop('checked')) {
-        alert('Тест Пройден');
+        $returnRight.push($($oneTrueBlockQuestion[i]).context.value);
       }
     }
   });

@@ -20,16 +20,17 @@
         <% for(var i = 0; i < data.length; i++) {%>
       <div class="content-block-<%= i+1 %>">
         <h2><%= data[i].question %></h2>
+
         <label>
-          <input type="checkbox" id="one-variant">
+          <input type="checkbox" id="one-variant" value="<%= data[i].answer1 %>">
           <span><%= data[i].answer1 %></span>
         </label>
         <label>
-          <input type="checkbox" id="two-variant">
+          <input type="checkbox" id="two-variant" value="<%= data[i].answer2 %>">
           <span><%= data[i].answer2 %></span>
         </label>
         <label>
-          <input type="checkbox" id="three-variant">
+          <input type="checkbox" id="three-variant" value="<%= data[i].answer3 %>">
           <span><%= data[i].answer3 %></span>
         </label>
        </div>
