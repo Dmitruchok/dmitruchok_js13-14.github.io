@@ -37,21 +37,21 @@ $testBlock = JSON.parse($testBlock);
   $('body').append(content);
 
   var $variant = $('#one-variant');
-  var $result = false;
+  //var $result = false;
 
   var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
  $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
-
-  console.log($oneTrueBlockQuestion[2]);
-
+  console.log($oneTrueBlockQuestion);
 
   $('#button-check').on('click', function () {
     event.preventDefault();
-      if ($oneTrueBlockQuestion.prop('checked')) {
+    for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
+      if ($($oneTrueBlockQuestion[i]).prop('checked')) {
         alert('Тест Пройден');
       }
-    });
+    }
+  });
 
 });
