@@ -36,20 +36,46 @@ $testBlock = JSON.parse($testBlock);
 
   $('body').append(content);
 
-  var $variant = $('#one-variant');
   var $right = ['Христофор Колумб', '1492', 'Китайцы'];
-  console.log($right.length);
   var $returnRight = [];
   console.log($returnRight);
   var $mass = [];
 
+/*var input = $('form').find('input');
+console.log(input);
 
-  var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
+$('#button-check').on('click', function () {
+  event.preventDefault();
+  for (var i = 0; i < form.length; i++) {
+    if ($(input[i]).prop('checked')) {
+      console.log(input[i]);
+      var a = $(input[i]).context.value;
+        if (a === $right[i]) {
+          $returnRight.push($right[i]);
+      }
+    }
+  }
+});*/
+
+  var $oneTrueBlockQuestion = $('input');
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
  $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
+ $('#button-check').on('click', function () {
+   event.preventDefault();
+   for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
+     if ($($oneTrueBlockQuestion[i]).prop('checked')) {
+       var a = $($oneTrueBlockQuestion[i]).context.value;
+       for (var j = 0; j < $right.length; j++) {
+         if (a === $right[j]) {
+           $returnRight.push($right[j]);
+         }
+       }
+     }
+   }
+ });
 
-  $('#button-check').on('click', function () {
+  /*$('#button-check').on('click', function () {
     event.preventDefault();
     for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
       if ($($oneTrueBlockQuestion[i]).prop('checked')) {
@@ -60,20 +86,21 @@ $testBlock = JSON.parse($testBlock);
             $returnRight.push($right[j]);
           }
         }
-
       }
     }
-  });
-
-  /*console.log($returnRight.length);
-  for (var i = 0; i < $right.length; i++) {
-    console.log($right[i]);
-    for (var j = 0; j < $returnRight.length; j++) {
-      console.log($returnRight[j]);
-      if ($right[i] == $returnRight[j]) {
-          $mass.push($right[i]);
-      }
-    }
-  }*/
+  });*/
 
 });
+
+
+
+/*console.log($returnRight.length);
+for (var i = 0; i < $right.length; i++) {
+  console.log($right[i]);
+  for (var j = 0; j < $returnRight.length; j++) {
+    console.log($returnRight[j]);
+    if ($right[i] == $returnRight[j]) {
+        $mass.push($right[i]);
+    }
+  }
+}*/
