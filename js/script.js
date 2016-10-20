@@ -39,27 +39,9 @@ $testBlock = JSON.parse($testBlock);
   var $right = ['Христофор Колумб', '1492', 'Китайцы'];
   var $returnRight = [];
   console.log($returnRight);
-  var $mass = [];
 
-/*var input = $('form').find('input');
-console.log(input);
-
-$('#button-check').on('click', function () {
-  event.preventDefault();
-  for (var i = 0; i < form.length; i++) {
-    if ($(input[i]).prop('checked')) {
-      console.log(input[i]);
-      var a = $(input[i]).context.value;
-        if (a === $right[i]) {
-          $returnRight.push($right[i]);
-      }
-    }
-  }
-});*/
 
   var $oneTrueBlockQuestion = $('input');
- $twoTrueBlockQuestion = $('.content-block-2').find('input'),
- $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
  $('#button-check').on('click', function () {
    event.preventDefault();
@@ -73,34 +55,21 @@ $('#button-check').on('click', function () {
        }
      }
    }
- });
-
-  /*$('#button-check').on('click', function () {
-    event.preventDefault();
-    for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
-      if ($($oneTrueBlockQuestion[i]).prop('checked')) {
-        var a = $($oneTrueBlockQuestion[i]).context.value;
-        console.log(a);
-        for (var j = 0; j < $right.length; j++) {
-          if (a === $right[j]) {
-            $returnRight.push($right[j]);
-          }
-        }
-      }
-    }
-  });*/
-
+if ($right.length === $returnRight.length) {
+  alert('Тест пройден))');
+} else {
+  alert('Тест не пройден))');
+}
+ })
 });
 
 
-
-/*console.log($returnRight.length);
-for (var i = 0; i < $right.length; i++) {
-  console.log($right[i]);
+/*for (var i = 0; i < $right.length; i++) {
   for (var j = 0; j < $returnRight.length; j++) {
-    console.log($returnRight[j]);
-    if ($right[i] == $returnRight[j]) {
-        $mass.push($right[i]);
+    if ( $right[i] === $returnRight[j]) {
+      alert('Тест пройден))');
+    } else {
+      alert('Тест не пройден))');
     }
   }
 }*/
