@@ -37,26 +37,36 @@ $testBlock = JSON.parse($testBlock);
   $('body').append(content);
 
   var $variant = $('#one-variant');
-  var $result = false;
+  var $right = ['Христофор Колумб', '1492', 'Китайцы'];
+  console.log($right.length);
+
+  var $mass = [];
+
 
   var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
  $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
-console.log($oneTrueBlockQuestion);
-
-for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
-
-  if ($oneTrueBlockQuestion.prop('checked') === false) {
-    alert('Тест Пройден');
-  }
-};
-
-
 
   $('#button-check').on('click', function () {
     event.preventDefault();
+    for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
+      if ($($oneTrueBlockQuestion[i]).prop('checked')) {
+        $returnRight.push($($oneTrueBlockQuestion[i]).context.value);
+      }
+    }
+  });
+  var $returnRight = [];
+  console.log($returnRight.length);
+  for (var i = 0; i < $right.length; i++) {
+    console.log($right[i]);
+    for (var j = 0; j < $returnRight.length; j++) {
+      console.log($returnRight[j]);
+      if ($right[i] == $returnRight[j]) {
+          $mass.push($right[i]);
+      }
+    }
+  }
 
-    });
 
 });
