@@ -47,8 +47,8 @@ checkbox3 = $('.content-block-3').find('input');
 checkbox1.click(function checked() {
   for (var i = 0; i < checkbox1.length; i++) {
     console.log(checkbox1[i]);
-    if ($(checkbox1[i]).prop('checked')) {
-      $(checkbox1[i]).attr("disabled", true);
+    if ($('#1-variant').prop('checked')) {
+      $('#2-variant').attr("disabled", true);
     }
   }
 })
