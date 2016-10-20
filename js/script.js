@@ -36,24 +36,22 @@ $testBlock = JSON.parse($testBlock);
 
   $('body').append(content);
 
-  var $right = ['Христофор Колумб', '1492', 'Китайцы'];
-  var $returnRight = [];
+  var $right = ['Христофор Колумб', '1492', 'Китайцы'],
+  $returnRight = [];
   console.log($returnRight);
 
 /*var checkbox1 = $('.content-block-1').find('input'),
 checkbox2 = $('.content-block-2').find('input'),
-checkbox3 = $('.content-block-3').find('input');
-checkbox1.click(function checked() {
-  for (var i = 0; i < checkbox1.length; i++) {
-    console.log(checkbox1[i]);
-    if ($('#1-variant').prop('checked')) {
-      $('#2-variant').attr("disabled", true);
-    }
-  }
-})*/
+checkbox3 = $('.content-block-3').find('input');*/
+$('#modal_close, #overlay').click(function () {
+  $('#modal_form').animate({opacity: 1, top: '45%'},500,
+  function () {
+    $(this).css('display', 'none');
+    $('#overlay').fadeOut(500);
+  });
+})
 
-  var $TrueBlockQuestion = $('input');
-
+var $TrueBlockQuestion = $('input');
 
  $('#button-check').on('click', function () {
    event.preventDefault();
@@ -68,11 +66,21 @@ checkbox1.click(function checked() {
      }
    }
 if ($right.length === $returnRight.length) {
-  alert('Тест пройден))');
+ $('#overlay').fadeIn(500, function () {
+   $('#modal_form')
+   .css('display', 'block')
+   .animate({opacity: 1, top: '50%'},200);
+   $('#passed').css('display', 'block');
+ });
 } else {
-  alert('Тест не пройден))');
+  $('#overlay').fadeIn(500, function () {
+    $('#modal_form')
+    .css('display', 'block')
+    .animate({opacity: 1, top: '50%'},200);
+    $('#not_passed').css('display', 'block');
+  });
 }
- })
+});
 });
 
 
