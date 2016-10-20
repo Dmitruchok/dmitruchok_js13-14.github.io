@@ -40,16 +40,29 @@ $testBlock = JSON.parse($testBlock);
   var $returnRight = [];
   console.log($returnRight);
 
+var checkbox1 = $('.content-block-1').find('input'),
+checkbox2 = $('.content-block-2').find('input'),
+checkbox3 = $('.content-block-3').find('input');
 
-  var $oneTrueBlockQuestion = $('input');
+checkbox1.click(function checked() {
+  for (var i = 0; i < checkbox1.length; i++) {
+    console.log(checkbox1[i]);
+    if ($(checkbox1[i]).prop('checked')) {
+      $(checkbox1[i]).attr("disabled", true);
+    }
+  }
+})
+
+  var $TrueBlockQuestion = $('input');
+
 
  $('#button-check').on('click', function () {
    event.preventDefault();
-   for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
-     if ($($oneTrueBlockQuestion[i]).prop('checked')) {
-       var a = $($oneTrueBlockQuestion[i]).context.value;
+   for (var i = 0; i < $TrueBlockQuestion.length; i++) {
+     if ($($TrueBlockQuestion[i]).prop('checked')) {
+       var valueText = $($TrueBlockQuestion[i]).context.value;
        for (var j = 0; j < $right.length; j++) {
-         if (a === $right[j]) {
+         if (valueText === $right[j]) {
            $returnRight.push($right[j]);
          }
        }
