@@ -39,7 +39,8 @@ $testBlock = JSON.parse($testBlock);
   var $variant = $('#one-variant');
   var $right = ['Христофор Колумб', '1492', 'Китайцы'];
   console.log($right.length);
-
+  var $returnRight = [];
+  console.log($returnRight.length);
   var $mass = [];
 
 
@@ -56,8 +57,7 @@ $testBlock = JSON.parse($testBlock);
       }
     }
   });
-  var $returnRight = [];
-  console.log($returnRight.length);
+
   for (var i = 0; i < $right.length; i++) {
     console.log($right[i]);
     for (var j = 0; j < $returnRight.length; j++) {
