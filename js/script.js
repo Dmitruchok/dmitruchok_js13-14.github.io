@@ -33,13 +33,12 @@ $testBlock = JSON.parse($testBlock);
   var content = tmpl( $html, {
     data: $testBlock
   });
-
   $( 'body' ).append( content );
 
-  var $right = [ 'Христофор Колумб', '1492', 'Китайцы' ],
-  $returnRight = [];
 
-var $TrueBlockQuestion = $( 'input' );
+  var $right = [ 'Христофор Колумб', '1492', 'Китайцы' ],
+  $returnRight = [],
+  $TrueBlockQuestion = $( 'input' );
 
 /*Проверка теста и push правильных вариантов в массив*/
  $( '#button-check' ).on( 'click', function () {
@@ -60,6 +59,10 @@ if ( $right.length === $returnRight.length ) {//сравниваем длину 
    .css( 'display', 'block' )
    .animate( { opacity: 1, top: '50%' }, 200 );
    $( '#passed' ).css( 'display', 'block' );
+   $('#modal_close').css({
+      'color': '#000',
+      'background': '#66db66'
+   });
  });
 } else {
   $( '#overlay' ).fadeIn(500, function () {
@@ -68,7 +71,7 @@ if ( $right.length === $returnRight.length ) {//сравниваем длину 
     .animate( {opacity: 1, top: '50%'}, 200 );
     $( '#not_passed' ).css( 'display', 'block' );
   });
-}
+  }
 });
 
 /*Закрываем модальное окно*/
