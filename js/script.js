@@ -43,15 +43,20 @@ $testBlock = JSON.parse($testBlock);
  $twoTrueBlockQuestion = $('.content-block-2').find('input'),
  $threeTrueBlockQuestion = $('.content-block-3').find('input');
 
+console.log($oneTrueBlockQuestion);
 
-  console.log($oneTrueBlockQuestion[2]);
+for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
+
+  if ($oneTrueBlockQuestion.prop('checked') === false) {
+    alert('Тест Пройден');
+  }
+};
+
 
 
   $('#button-check').on('click', function () {
     event.preventDefault();
-      if ($oneTrueBlockQuestion.prop('checked')) {
-        alert('Тест Пройден');
-      }
+
     });
 
 });
