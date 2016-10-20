@@ -40,7 +40,7 @@ $testBlock = JSON.parse($testBlock);
   var $returnRight = [];
   console.log($returnRight);
 
-var checkbox1 = $('.content-block-1').find('input'),
+/*var checkbox1 = $('.content-block-1').find('input'),
 checkbox2 = $('.content-block-2').find('input'),
 checkbox3 = $('.content-block-3').find('input');
 
@@ -51,7 +51,7 @@ checkbox1.click(function checked() {
       $('#2-variant').attr("disabled", true);
     }
   }
-})
+})*/
 
   var $TrueBlockQuestion = $('input');
 
