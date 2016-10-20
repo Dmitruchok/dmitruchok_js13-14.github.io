@@ -36,37 +36,52 @@ $testBlock = JSON.parse($testBlock);
 
   $('body').append(content);
 
-  var $variant = $('#one-variant');
   var $right = ['Христофор Колумб', '1492', 'Китайцы'];
-  console.log($right.length);
   var $returnRight = [];
-  console.log($returnRight.length);
-  var $mass = [];
+  console.log($returnRight);
 
-
-  var $oneTrueBlockQuestion = $('.content-block-1').find('input'),
- $twoTrueBlockQuestion = $('.content-block-2').find('input'),
- $threeTrueBlockQuestion = $('.content-block-3').find('input');
-
-
-  $('#button-check').on('click', function () {
-    event.preventDefault();
-    for (var i = 0; i < $oneTrueBlockQuestion.length; i++) {
-      if ($($oneTrueBlockQuestion[i]).prop('checked')) {
-        $returnRight.push($($oneTrueBlockQuestion[i]).context.value);
-      }
-    }
-  });
-
-  for (var i = 0; i < $right.length; i++) {
-    console.log($right[i]);
-    for (var j = 0; j < $returnRight.length; j++) {
-      console.log($returnRight[j]);
-      if ($right[i] == $returnRight[j]) {
-          $mass.push($right[i]);
-      }
+/*var checkbox1 = $('.content-block-1').find('input'),
+checkbox2 = $('.content-block-2').find('input'),
+checkbox3 = $('.content-block-3').find('input');
+checkbox1.click(function checked() {
+  for (var i = 0; i < checkbox1.length; i++) {
+    console.log(checkbox1[i]);
+    if ($('#1-variant').prop('checked')) {
+      $('#2-variant').attr("disabled", true);
     }
   }
+})*/
+
+  var $TrueBlockQuestion = $('input');
 
 
+ $('#button-check').on('click', function () {
+   event.preventDefault();
+   for (var i = 0; i < $TrueBlockQuestion.length; i++) {
+     if ($($TrueBlockQuestion[i]).prop('checked')) {
+       var valueText = $($TrueBlockQuestion[i]).context.value;
+       for (var j = 0; j < $right.length; j++) {
+         if (valueText === $right[j]) {
+           $returnRight.push($right[j]);
+         }
+       }
+     }
+   }
+if ($right.length === $returnRight.length) {
+  alert('Тест пройден))');
+} else {
+  alert('Тест не пройден))');
+}
+ })
 });
+
+
+/*for (var i = 0; i < $right.length; i++) {
+  for (var j = 0; j < $returnRight.length; j++) {
+    if ( $right[i] === $returnRight[j]) {
+      alert('Тест пройден))');
+    } else {
+      alert('Тест не пройден))');
+    }
+  }
+}*/
