@@ -22,6 +22,13 @@ $(function () {
   answer1: 'Китайцы',
   answer2: 'Немцы',
   answer3: 'Индейцы'
+},
+
+{
+  question: '3. С кем воевала Америка за все годы существования?',
+  answer1: 'Куба',
+  answer2: 'Ирак',
+  answer3: 'Украина'
 }
 ];
 
@@ -36,7 +43,7 @@ $testBlock = JSON.parse($testBlock);
   $( 'body' ).append( content );
 
 
-  var $right = [ 'Христофор Колумб', '1492', 'Китайцы' ],
+  var $right = [ 'Христофор Колумб', '1492', 'Китайцы','Ирак', 'Куба' ],
   $returnRight = [],
   $TrueBlockQuestion = $( 'input' );
 
