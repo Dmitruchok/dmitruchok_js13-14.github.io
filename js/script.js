@@ -83,7 +83,7 @@ if ( $right.length === $returnRight.length ) {//сравниваем длину 
 
 /*Закрываем модальное окно*/
 $('#modal_close, #overlay').click(function () {
-  $('#modal_form').animate({opacity: 1, top: '45%'},500,
+  $('#modal_form').animate({opacity: 1, top: '0'}, 300,
   function () {
     $(this).css('display', 'none');
     $('#overlay').fadeOut(500);

@@ -46,7 +46,7 @@ input[type='submit'] {
   border: 1px solid #000;
   border-radius: 6px;
   position: fixed;
-  top: 45%;
+  top: 0;
   left: 50%;
   margin-top: -150px;
   margin-left: -150px;
