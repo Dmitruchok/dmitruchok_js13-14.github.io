@@ -68,7 +68,6 @@ if ( $right.length === $returnRight.length ) {//сравниваем длину 
    $( '#passed' ).css( 'display', 'block' );
    $('#modal_close').css({
       'color': '#000',
-      'background': '#66db66'
    });
  });
 } else {

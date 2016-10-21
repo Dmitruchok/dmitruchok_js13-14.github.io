@@ -60,13 +60,17 @@ input[type='submit'] {
   display: flex;
   justify-content: center;
   border: 1px solid #000;
-  color: #fff;
-  background: #000;
+  color: #000;
+  background: #fff;
   border-radius: 5px;
   cursor: pointer;
   width: 17px;
   height: 17px;
   margin-left: 380px;
+}
+
+#modal_close:hover {
+  background: #bc2020;
 }
 
 #passed {
