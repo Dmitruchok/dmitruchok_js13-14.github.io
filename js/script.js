@@ -80,7 +80,8 @@ $('#modal_close, #overlay').click(function () {
   function () {
     $(this).css('display', 'none');
     $('#overlay').fadeOut(500);
+    location.reload();
   });
-})
+});
 
 });
